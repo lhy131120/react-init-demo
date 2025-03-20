@@ -1,0 +1,29 @@
+.swiper {
+  width: 100%;
+  &-button-prev,
+  &-button-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-height: 35px;
+    min-width: 35px;
+    clip-path: circle(50% at 50% 50%);
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  &-button-prev {
+    left: 3vw;
+  }
+  &-button-next {
+    right: 3vw;
+  }
+  &-button-prev:after, &-button-next:after {
+    content: ""
+  }
+}
+.swiper img {
+  aspect-ratio: 1920 / 1080;
+  width: 100%;
+  object-fit: cover;
+}
