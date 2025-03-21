@@ -1,16 +1,13 @@
 :root {
-  --background-color: #f2f2f2;
-  --link: #2D4059;
-  --link-hover: #FF9F5A;
-  --link-active: #3D5169;
-  --button-primary: #FF9F5A;
-  --button-primary-hover: #FF8940;
-  --button-secondary: #FF9F5A;
-  --button-secondary-hover: #F56565;
-  --button-danger: #FF4D4D;
-  --button-danger-hover: #FF1493;
-  // --button-info: #00C4FF;
-  // --button-info-hover: #FFD700;
+	--link: #2d4059;
+	--link-hover: #ff9f5a;
+	--link-active: #3d5169;
+	--button-primary: #ff9f5a;
+	--button-primary-hover: #ff8940;
+	--button-secondary: #ff9f5a;
+	--button-secondary-hover: #f56565;
+	--button-danger: #ff4d4d;
+	--button-danger-hover: #ff1493;
 }
 
 // 主要按鈕：#FF9F5A 背景，白色文字，圓角 5px
@@ -18,38 +15,163 @@
 // 次要按鈕：白色背景，#FF9F5A 邊框和文字
 // Hover 效果：#FF9F5A 10% 透明度背景
 
-// H1: 42px, margin-bottom: 24px
-// H2: 32px, margin-bottom: 20px
-// H3: 26px, margin-bottom: 16px
-// H4: 22px, margin-bottom: 14px
-// H5: 18px, margin-bottom: 12px
-// H6: 16px, margin-bottom: 10px
+// Custom.scss
+// Option B: Include parts of Bootstrap
 
-// 一般段落：16px, line-height: 1.6, margin-bottom: 16px
-// 小號文字（注釋等）：14px, line-height: 1.4
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
 
-$primary: #FF9F5A;
-$secondary: #2D4059;
-$success: #F7F7F7;
-$danger: #FF4D4D;
-$info: #00C4FF; //作為背景和間隔使用
-$light: #F8F9FA;
-$dark: #333333;
+// 2. Include any default variable overrides here
+// $info: #00C4FF; //作為背景和間隔使用
+// $link: #2D4059;
+// $link-hover: #FF9F5A;
+// $link-active: #3D5169;
+// $button-primary: #FF9F5A;
+// $button-primary-hover: #FF8940;
+// $button-secondary: #FF9F5A;
+// $button-secondary-hover: #F56565;
+// $button-danger: #FF4D4D;
+// $button-danger-hover: #FF1493;
 
-// $line-height-base: 1.2;
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "./variables";
+@import "bootstrap/scss/variables-dark";
 
-@import "bootstrap/scss/bootstrap";
+// 4. Include any default map overrides here
+@import "./custom";
 
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "./utilities";
+
+// Layout & components
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
 // Plugin css
 @import "./swiper";
 
 // Page
 @import "./index";
 
+.bg-gradient-main {
+	background-image: linear-gradient(to right bottom, #fff5eb, #fff6f3, #fff9fa, #fffcfe, #ffffff);
+}
+
 .header {
-  transition: all .5s ease 0s;
-  &.sticky-top {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba( 0, 0, 0, .1);
+	transition: all 0.5s ease 0s;
+	&.sticky-top {
+		background-color: $white;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.starsWrap {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.star {
+  font-family: 'Material Icons';
+  font-size: 1.125rem;
+  color: #FFD700;
+}
+
+.star::before {
+  content: 'star';
+}
+
+.catItem {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $white;
+	// border-radius: 50%;
+  border-radius: 12px;
+	aspect-ratio: 1;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	h3 {
+		position: absolute;
+    inset: (auto 0 0 0);
+    // bottom: 0; /* 固定在底部 */
+    // left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.125rem;
+    margin: 0 !important;
+    color: $dark;
+    background-color: rgba(255, 255, 255, 0.7); /* 非懸停時的半透明背景 */
+    padding: 0.5rem; /* 稍微減少內邊距 */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    z-index: 1; /* 確保在圖片上方 */
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.35;
+		transition: all 0.3s ease 0s;
+	}
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0 6px 10px rgba(0, 0, 0, 0.20);
+    h3 {
+      color: $white;
+      background-color: rgba(255, 137, 64, 0.8); /* 半透明的#ff8940 */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 增加文字陰影 */
+    }
+		img {
+			transform: scale(1.1); /* 縮放比例減小 */
+      opacity: 0.8; /* 保留一點透明度 */
+		}
+	}
+}
+
+.hotItem {
+  border-radius: 12px;
+  .img {
+
+  }
+  .button {
+    cursor: pointer;
   }
 }

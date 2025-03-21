@@ -542,11 +542,13 @@ $utilities: map-merge(
       )
     ),
     "line-height": (
+      responsive: true,
       property: line-height,
       class: lh,
       values: (
         0: 0,
         1: 1,
+        xs: $line-height-xs,
         sm: $line-height-sm,
         base: $line-height-base,
         lg: $line-height-lg,

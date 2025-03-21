@@ -1,0 +1,51 @@
+$primary-100: #e9e2f3;
+$primary-200: #7000ff;
+$primary-300: #6e01f8;
+$primary-400: #380c7e;
+
+$custom-colors: (
+	"primary-100": $primary-100,
+	"primary-200": $primary-200,
+	"primary-300": $primary-300,
+	"primary-400": $primary-400,
+);
+
+// h4 {
+// 	margin-bottom: 0.875rem!important;
+// }
+
+// h5 {
+// 	margin-bottom: 0.75rem!important;
+// }
+
+// h6 {
+// 	margin-bottom: 0.625rem!important;
+// }
+
+// 合併自定義顏色到 $theme-colors
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+.button {
+	border-radius: 80px;
+	border: 1px solid transparent;
+	color: $white;
+	font-size: 1.125rem;
+	line-height: 1.2;
+	padding: 0.75rem 1.75rem;
+  transition: all .25s ease 0s;
+	&-primary {
+		background-color: $primary;
+	}
+  &-primary:is(:hover, :active, .active) {
+		background-color: #FF8940;
+	}
+	&-secondary {
+		background-color: $white;
+		color: #ff9f5a;
+		border: 1px solid #ff9f5a;
+	}
+	&-secondary:is(:hover, :active, .active) {
+		background-color: rgba(255, 159, 90, 0.1);
+	}
+}
