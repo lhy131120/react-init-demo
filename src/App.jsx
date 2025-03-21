@@ -134,7 +134,7 @@ function App() {
 						<div className="container">
 							<div className="row">
 								<h1 className="mb-4 mb-lg-6 fs-4 fs-lg-3 text-secondary">為您的毛孩提供最貼心的呵護</h1>
-								<h2 className="mb-3 mb-lg-5 fs-7 fs-lg-5">精選高品質貓狗用品，讓您的寵物每天都健康快樂</h2>
+								<h2 className="mb-7 mb-lg-9 fs-7 fs-lg-5">精選高品質貓狗用品，讓您的寵物每天都健康快樂</h2>
 								<div className="d-flex gap-3 mb-3 py-8">
 									<button className="button button-primary">立即選購</button>
 									<button className="button button-secondary">探索熱門商品</button>
@@ -151,7 +151,7 @@ function App() {
 					<section id="categories" className="py-8 py-lg-10">
 						<div className="container">
 							<div className="text-center">
-								<h2 className="mb-3 mb-lg-5 fs-7 fs-lg-5">為您的寵物尋找完美選擇</h2>
+								<h2 className="mb-7 mb-lg-9 fs-7 fs-lg-5">為您的寵物尋找完美選擇</h2>
 							</div>
 							<div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-lg-3">
 								<div className="col">
@@ -215,8 +215,8 @@ function App() {
 					<section id="best-sellers" className="bg-white py-8 py-lg-10">
 						<div className="container">
 							<div className="text-center">
-								<h2 className="mb-3 mb-lg-5 fs-7 fs-lg-5">我們的明星商品</h2>
-								<h3 className="mb-2 mb-lg-3 fs-8 fs-lg-6 text-primary">被千萬貓奴狗奴所喜愛的熱銷產品</h3>
+								<h2 className="mb-6 mb-lg-8 fs-7 fs-lg-5">我們的明星商品</h2>
+								<h3 className="mb-6 mb-lg-8 fs-8 fs-lg-6 text-primary">被千萬貓奴狗奴所喜愛的熱銷產品</h3>
 							</div>
 						<div className="row row-cols-lg-4 g-lg-3">
 							<div className="col">
